@@ -1,30 +1,36 @@
-#!/usr/bin/env python
-#-*- coding:utf-8 -*-
-
 #############################################
 # File Name: setup.py
-# Author: xingming
-# Mail: huoxingming@gmail.com
-# Created Time:  2015-12-11 01:25:34 AM
+# Author: helailiang
+# Mail: helailiang@reddatetech.com
+# Created Time:  2020-04-26 01:25:34 AM
 #############################################
 
 
 from setuptools import setup, find_packages
 
+with open("README.md", "r", encoding='utf-8') as fh:
+    long_description = fh.read()
+
 setup(
     name = "bsn_sdk_py",
-    version = "1.0.0",
-    keywords = ("bsn","blockchain", "Beijing Red Date", "bsn_sdk_py"),
-    description = "bsn sdk",
-    long_description = "bsn sdk 2020/04/23",
+    version = "1.0.4",
+    keywords = ("bsn","fabric", "bsnbase", "bsn_sdk_py", "bsn_sdk_python"),
+    description = "this is the bsn Call the gateway sdk",
+    long_description = long_description,
+    long_description_content_type="text/markdown",
     license = "MIT Licence",
-
-    url = "https://github.com/helailiang/bsn-sdk-python",
+    url = "https://github.com/BSNDA/PCNGateway-PY-SDK",
     author = "helailiang",
     author_email = "helailiang@reddatetech.com",
 
     packages = find_packages(),
     include_package_data = True,
     platforms = "any",
+    classifiers=[
+            "Programming Language :: Python :: 3",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+        ],
+    python_requires='>=3.6',
     install_requires = ['hkdf==0.0.3','cryptography==2.7','fabric-sdk-py==0.8.1']
 )
