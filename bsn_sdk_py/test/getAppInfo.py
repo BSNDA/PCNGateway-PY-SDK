@@ -6,6 +6,8 @@ c = Config(user_code="USER0001202004151958010871292", app_code="app0001202004161
                  user_private_cert_path=r"E:\hz_workspace\study\bsn_sdk_py\test\private.pem",
            app_public_cert_path=r"E:\hz_workspace\study\bsn_sdk_py\test\public.pem")
 
+
+
 client = FabricClient()
 client.set_config(c)
 # register = client.register_user('hll3','123456')
