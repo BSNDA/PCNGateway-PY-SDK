@@ -3,8 +3,9 @@ from bsn_sdk_py.client.exceptions import BsnException
 from bsn_sdk_py.client.bsn_enum import ResCode
 from bsn_sdk_py.until.bsn_logger import log_debug,log_info
 import  urllib3
+import logging
 
-
+logging.captureWarnings(True)
 urllib3.disable_warnings()  ## Cancel the HTTPS request 2020/08/25
 
 class APIRequestor(object):

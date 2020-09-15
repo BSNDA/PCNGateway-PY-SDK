@@ -5,7 +5,7 @@ import logging
 
 
 # user under Public-Key-Upload Mode
-c = Config(user_code="USER0001202004151958010871292", app_code="app0001202004161020152918451",
+c1 = Config(user_code="USER0001202004151958010871292", app_code="app0001202004161020152918451",
            nodeApi="http://192.168.1.43:17502", mspDir=r"E:\hz_workspace\study\bsn_sdk_py\test", httpcert="",
                  user_private_cert_path=r"E:\hz_workspace\study\bsn_sdk_py\test\private.pem",
            app_public_cert_path=r"E:\hz_workspace\study\bsn_sdk_py\test\public.pem")
@@ -15,7 +15,6 @@ c = Config(user_code="USER0001202004151958010871292", app_code="app0001202004161
 #            nodeApi="http://192.168.1.43:17502", mspDir=r"E:\hz_workspace\study\bsn_sdk_py\test", httpcert="",
 #                  user_private_cert_path=r"E:\hz_workspace\study\bsn_sdk_py\test\private.pem",
 #            app_public_cert_path=r"E:\hz_workspace\study\bsn_sdk_py\test\public.pem")
-
 
 
 class TestBsn(unittest.TestCase):  # inherit unittest.TestCase
