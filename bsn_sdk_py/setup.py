@@ -32,5 +32,5 @@ setup(
             "Operating System :: OS Independent",
         ],
     python_requires='>=3.6',
-    install_requires = ['hkdf==0.0.3','cryptography==2.7','fabric-sdk-py==0.8.1']
+    install_requires = ['hkdf==0.0.3','cryptography==3.2','fabric-sdk-py==0.8.1']
 )
