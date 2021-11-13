@@ -9,10 +9,21 @@ logging.captureWarnings(True)
 urllib3.disable_warnings()  ## Cancel the HTTPS request 2020/08/25
 
 class APIRequestor(object):
+    '''
+    common request object
+    '''
+
     def __init__(self, cert_path=False):
         self.cert_path = cert_path
 
     def request_post(self, req_url, data):
+        """
+        :description  :
+        :param  :
+        :return  :
+        """
+        
+        
         log_info(("request address：", req_url))
         log_info(("request data：", data))
         headers = {'content-type': 'application/json'}

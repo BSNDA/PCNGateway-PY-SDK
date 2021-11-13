@@ -10,6 +10,7 @@ class BsnAES:
     """
     ECB：is a basic encryption algorithm not commonly used now, CBC mode is more prevailing
     """
+    
     def __init__(self, secret, iv=None):
         self.secret = secret.encode('utf-8')
         if not iv:
@@ -24,17 +25,17 @@ class BsnAES:
         text = text + ('\0' * add)
         return text.encode('utf-8')
 
-    # encrypt function 
+    # encrypt function
     def encrypt(self, text):
         mode = AES.MODE_CBC  # define mode
         iv = b'0000000000000000'  # offset--16 bytes exactly
         text = self.add_to_16(text)
         cryptos = AES.new(self.secret, mode, self.iv)
         cipher_text = cryptos.encrypt(text)
-        # Since AES encrypted string may not be ASCII character set, output saving may have problems. So it must be converted to hexadecomal string. 
+        # Since AES encrypted string may not be ASCII character set, output saving may have problems. So it must be converted to hexadecomal string.
         return b2a_hex(cipher_text)
 
-    # Remove the complemental Spaces after decryption 
+    # Remove the complemental Spaces after decryption
     def decrypt(self, text):
         iv = b'0000000000000000'
         mode = AES.MODE_CBC

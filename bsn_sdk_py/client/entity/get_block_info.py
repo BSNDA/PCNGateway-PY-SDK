@@ -9,18 +9,31 @@ class GetBlockInfo(BsnBase):
     get block info
     """
     def __init__(self, blockNumber=0, blockHash='', txId=''):
+        """
+        :description  :
+        :param blockNumber: block number
+        :param blockHash:   block hash
+        :param txId:        transaction hash
+        :return  :
+        """
+        
         self.blockNumber = blockNumber
         self.blockHash = blockHash
         self.txId = txId
 
     def req_body(self):
+        """
+        :description  : build request body
+        :param  :
+        :return  :
+        """
+
         req_body = {
             "blockNumber": self.blockNumber,
             "blockHash": self.blockHash,
             "txId": self.txId,
         }
         return req_body
-
 
     def sign(self, body):
         # assemble character string to sign

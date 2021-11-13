@@ -31,7 +31,7 @@ class TestBsn(unittest.TestCase):  # inherit unittest.TestCase
         print('Setup of every case01')
         FORMAT = "%(asctime)s %(thread)d %(message)s"
         logging.basicConfig(filename='bsn_test.log', filemode='w',level=logging.INFO, format=FORMAT, datefmt="[%Y-%m-%d %H:%M:%S]")
-
+        # Create the requesting client
         client = FabricClient()
         client.set_config(c)
         self.client = client

@@ -6,17 +6,14 @@ from bsn_sdk_py.until.tools import nonce_str, array_sort, map_sort, obj_sort
 
 class GetLedgerInfo(BsnBase):
     """
-    get ledger info 
+    get ledger info : Interface to get the latest ledger information
     """
     def __init__(self):
         pass
 
     def req_body(self):
-        req_body = {
-
-        }
+        req_body = {}
         return req_body
-
 
     def sign(self, body):
         # assemble character string to sign
