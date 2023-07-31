@@ -3,7 +3,7 @@ from bsn_sdk_py.common.api_requestor import APIRequestor
 from bsn_sdk_py.client.bsn_enum import AppCaType
 from bsn_sdk_py.until.bsn_logger import log_debug, log_info
 from bsn_sdk_py.client.entity import RegisterUser, EnrollUser, ReqChainCode, GetTransaction, \
-    GetBlockInfo, GetLedgerInfo, EventRegister, EventQuery, EventRemove, NoTrustTrans
+    GetBlockInfo, GetLedgerInfo, EventRegister, EventQuery, EventRemove, NoTrustTrans, GetBlockData
 
 
 class FabricClient(object):
@@ -162,6 +162,31 @@ class FabricClient(object):
         req_data["mac"] = mac
         res_data = self.common_request(req_url, req_data)
         assert get_block_info_obj.verify(res_data), "verification failure"
+        return res_data
+
+    def get_block_data(self, blockNumber=0, blockHash='', txId='', dataType='json'):
+        """
+        Get block info
+        :param blockNumber: block number
+        :param blockHash:   block hash
+        :param txId:        transaction hash
+        :param dataType:    response data type
+        :return:
+        """
+
+        assert any((
+            blockNumber,
+            blockHash,
+            txId,
+        )), "blockNumber or blockHash or txId cannot be empty at the same time"
+        req_url = self.config.nodeApi + "/api/fabric/v1/node/getBlockData"
+        get_block_data_obj = GetBlockData(blockNumber, blockHash, txId, dataType)
+        get_block_data_obj.set_config(self.config)
+        req_data = self.build_req_data(get_block_data_obj.req_body())
+        mac = get_block_data_obj.sign(req_data)
+        req_data["mac"] = mac
+        res_data = self.common_request(req_url, req_data)
+        assert get_block_data_obj.verify(res_data), "verification failure"
         return res_data
 
     def get_ledger_info(self):

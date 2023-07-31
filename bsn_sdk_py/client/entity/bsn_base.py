@@ -9,5 +9,5 @@ class BsnBase(object):
     def __init__(self):
         pass
 
-    def set_config(self, config:Config ):
+    def set_config(self, config: Config) -> object:
         self.config = config

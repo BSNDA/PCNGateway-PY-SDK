@@ -4,7 +4,7 @@ from cryptography.hazmat.primitives.serialization import load_pem_private_key, E
 from cryptography.x509 import load_pem_x509_certificate, NameOID
 from hfc.util.crypto.crypto import Ecies, ecies, CURVE_P_256_Size, SHA2
 from bsn_sdk_py.until.bsn_logger import log_debug, log_info
-
+import OpenSSL
 
 class BsnCrypto():
     """
@@ -42,11 +42,12 @@ class ECDSA(BsnCrypto):
         with open(app_public_cert_path, "rb") as fp:
             pubilc_key_data = fp.read()
         # Load the X509 cert public key cert
-        cert = load_pem_x509_certificate(pubilc_key_data, default_backend())
+        # cert = load_pem_x509_certificate(pubilc_key_data, default_backend())
+        cert = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, pubilc_key_data)
         # print("public key cert:", cert)
 
         # take contents of public key
-        public_key = cert.public_key()
+        public_key = cert.get_pubkey().to_cryptography_key()
         # print("content of public key public_key:", public_key)
         return public_key
 
