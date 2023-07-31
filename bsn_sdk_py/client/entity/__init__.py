@@ -9,6 +9,6 @@ from bsn_sdk_py.client.entity.event_register import EventRegister
 from bsn_sdk_py.client.entity.event_query import EventQuery
 from bsn_sdk_py.client.entity.event_remove import EventRemove
 from bsn_sdk_py.client.entity.no_trust_trans import NoTrustTrans
-
+from bsn_sdk_py.client.entity.get_block_data import GetBlockData
 
 

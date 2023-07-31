@@ -10,7 +10,7 @@ c1 = Config(user_code="USER0001202303131659259603304", app_code="app000120230725
                  user_private_cert_path=r"E:\python_workspase\PCNGateway-PY-SDK\bsn_sdk_py\test\private.pem",
            app_public_cert_path=r"E:\python_workspase\PCNGateway-PY-SDK\bsn_sdk_py\test\public.pem")
 
-# user under Key-Trust Mode
+# user under Key-Trust Mode 
 # c = Config(user_code="USER0001202004161009309407413", app_code="app0001202004161017141233920",
 #            nodeApi="http://192.168.1.43:17502", mspDir=r"E:\hz_workspace\study\bsn_sdk_py\test", httpcert="",
 #                  user_private_cert_path=r"E:\hz_workspace\study\bsn_sdk_py\test\private.pem",
@@ -42,7 +42,7 @@ class TestBsn(unittest.TestCase):  # inherit unittest.TestCase
     def test_req_chain_code(self):  # Name the teast case 'test', otherwise not executed
         print('Test: transaction processing under Key-Trust Mode')
         self.client.req_chain_code(chainCode="cc_app0001202307251453523461410_01", funcName='set', name='',
-                              args=['{\"baseKey\":\"888\",\"baseValue\":\"this is string \"}'],
+                              args=['{\"baseKey\":\"777\",\"baseValue\":\"this is string \"}'],
                               transientData={})
 
     def test_get_transaction(self):
