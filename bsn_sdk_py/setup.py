@@ -13,7 +13,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setup(
     name = "bsn_sdk_py",
-    version = "1.0.6",
+    version = "1.0.7",
     keywords = ("bsn","fabric", "bsnbase", "bsn_sdk_py", "bsn_sdk_python"),
     description = "this is the bsn Call the gateway sdk",
     long_description = long_description,
