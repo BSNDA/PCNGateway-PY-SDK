@@ -76,7 +76,9 @@ def certificate_request(name, save_path):
     ecies256 = ecies()
     private_key = ecies256.generate_private_key()
     csr = ecies256.generate_csr(private_key, x509.Name(
-        [x509.NameAttribute(NameOID.COMMON_NAME, name)]))  # test02@app0001202004161020152918451
+        [x509.NameAttribute(NameOID.COMMON_NAME, name),
+         x509.NameAttribute(NameOID.ORGANIZATIONAL_UNIT_NAME, "client"),
+         x509.NameAttribute(NameOID.ORGANIZATION_NAME, "Bsn")]))  # test02@app0001202004161020152918451
     csr_pem = csr.public_bytes(Encoding.PEM)
     sk_pem = private_key.private_bytes(Encoding.PEM, PrivateFormat.PKCS8, serialization.NoEncryption())
     with open(save_path, mode='wb') as f:

@@ -13,7 +13,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setup(
     name = "bsn_sdk_py",
-    version = "1.0.6",
+    version = "1.0.7",
     keywords = ("bsn","fabric", "bsnbase", "bsn_sdk_py", "bsn_sdk_python"),
     description = "this is the bsn Call the gateway sdk",
     long_description = long_description,
@@ -32,5 +32,5 @@ setup(
             "Operating System :: OS Independent",
         ],
     python_requires='>=3.6',
-    install_requires = ['hkdf==0.0.3','cryptography==41.0.2','fabric-sdk-py==1.0.6', 'pyOpenSSL==23.2.0']
+    install_requires = ['hkdf==0.0.3','cryptography==41.0.2','fabric-sdk-py==0.8.1', 'pyOpenSSL==23.2.0']
 )
