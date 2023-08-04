@@ -36,6 +36,6 @@ setup(
                       'cryptography==41.0.2',
                       'fabric-sdk-py==0.8.1',
                       'pyOpenSSL==23.2.0',
-                      'urllib3==1.24.3',
+                      'urllib3==1.26.5',
                       ]
 )
