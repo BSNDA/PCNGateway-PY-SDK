@@ -5,10 +5,10 @@ import logging
 
 
 # user under Public-Key-Upload Mode
-c1 = Config(user_code="USER0001202303131659259603304", app_code="app0001202307251453523461410",
-           nodeApi="http://gateway.node1.private.bsnbase.com:32101", mspDir=r"E:\python_workspase\PCNGateway-PY-SDK\test", httpcert="",
-                 user_private_cert_path=r"E:\python_workspase\PCNGateway-PY-SDK\bsn_sdk_py\test\private.pem",
-           app_public_cert_path=r"E:\python_workspase\PCNGateway-PY-SDK\bsn_sdk_py\test\public.pem")
+c1 = Config(user_code="USER0001202304271508229312381", app_code="app0001202307200912041213788",
+           nodeApi="http://gateway.node1.star.bsnbase.com:32000", mspDir=r"E:\python_workspase\hll\PCNGateway-PY-SDK\bsn_sdk_py\test", httpcert="",
+                 user_private_cert_path=r"E:\python_workspase\hll\PCNGateway-PY-SDK\bsn_sdk_py\test\private.pem",
+           app_public_cert_path=r"E:\python_workspase\hll\PCNGateway-PY-SDK\bsn_sdk_py\test\public.pem")
 
 # user under Key-Trust Mode 
 # c = Config(user_code="USER0001202004161009309407413", app_code="app0001202004161017141233920",
@@ -42,7 +42,7 @@ class TestBsn(unittest.TestCase):  # inherit unittest.TestCase
     def test_req_chain_code(self):  # Name the teast case 'test', otherwise not executed
         print('Test: transaction processing under Key-Trust Mode')
         self.client.req_chain_code(chainCode="cc_app0001202307251453523461410_01", funcName='set', name='',
-                              args=['{\"baseKey\":\"777\",\"baseValue\":\"this is string \"}'],
+                              args=['{\"baseKey\":\"9\",\"baseValue\":\"this is string \"}'],
                               transientData={})
 
     def test_get_transaction(self):
@@ -88,17 +88,17 @@ class TestBsn(unittest.TestCase):  # inherit unittest.TestCase
     def test_register_user(self):
         print('Test: register user')
         eventId = 'c70f0bc10a444bc4a1d916b05ffc6064'
-        self.client.register_user('hll4', '123456')
+        self.client.register_user('hll16', '123456')
 
     def test_enroll_user(self):
         print('Test:user registration cert under Public-Key-Upload Mode')
         eventId = 'c70f0bc10a444bc4a1d916b05ffc6064'
-        self.client.enroll_user('hll4', '123456')
+        self.client.enroll_user('hll16', '123456')
 
     def test_notrust_trans(self):
         print('Test: user registration cert under Public-Key-Upload Mode')
-        self.client.not_trust_trans(chainCode="cc_app0001202307251453523461410_01", funcName='set', name='hll4',
-                                   args=['{\"baseKey\":\"111\",\"baseValue\":\"this is string \"}'],
+        self.client.not_trust_trans(chainCode="cc_app0001202307200912041213788_01", funcName='set', name='hll16',
+                                   args=['{\"baseKey\":\"222\",\"baseValue\":\"this is string \"}'],
                                    transientData={})
 
 if __name__ == '__main__':
