@@ -6,13 +6,13 @@ import logging
 
 # user under Public-Key-Upload Mode
 c1 = Config(user_code="USER0001202304271508229312381", app_code="app0001202307200912041213788",
-           nodeApi="http://gateway.node1.star.bsnbase.com:32000", mspDir=r"E:\python_workspase\hll\PCNGateway-PY-SDK\bsn_sdk_py\test", httpcert="",
+           nodeApi="https://gateway.node1.star.bsnbase.com:32000", mspDir=r"E:\python_workspase\hll\PCNGateway-PY-SDK\bsn_sdk_py\test", httpcert="",
                  user_private_cert_path=r"E:\python_workspase\hll\PCNGateway-PY-SDK\bsn_sdk_py\test\private.pem",
            app_public_cert_path=r"E:\python_workspase\hll\PCNGateway-PY-SDK\bsn_sdk_py\test\public.pem")
 
 # user under Key-Trust Mode 
 # c = Config(user_code="USER0001202004161009309407413", app_code="app0001202004161017141233920",
-#            nodeApi="http://192.168.1.43:17502", mspDir=r"E:\hz_workspace\study\bsn_sdk_py\test", httpcert="",
+#            nodeApi="https://192.168.1.43:17502", mspDir=r"E:\hz_workspace\study\bsn_sdk_py\test", httpcert="",
 #                  user_private_cert_path=r"E:\hz_workspace\study\bsn_sdk_py\test\private.pem",
 #            app_public_cert_path=r"E:\hz_workspace\study\bsn_sdk_py\test\public.pem")
 
